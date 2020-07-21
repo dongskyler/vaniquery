@@ -82,6 +82,11 @@ Please follow these steps:
   ```
   yarn --frozen-lockfile
   ```
+- Add this command-line app (vaniquery is a command-line app) to your machine for development and testing:
+  ```
+  npm install -g .
+  ```
+- Run script `vaniquery --version` in your terminal. If you see a version number, that means the app has been installed correctly.
 
 ---
 

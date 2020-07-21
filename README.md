@@ -8,6 +8,7 @@ Repository: [https://github.com/BadwaterBay/vaniquery](https://github.com/Badwat
 
 - [Description](#Description)
 - [Badges](#Badges)
+- [Installation and usage](#Installation-and-usage)
 - [Contributing to this project](#Contributing-to-this-project)
 - [Contributors](#Contributors)
 
@@ -36,6 +37,23 @@ Removing jQuery dependency means your web app can run faster and be loaded faste
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/BadwaterBay/vaniquery.svg)](https://GitHub.com/BadwaterBay/vaniquery/issues?q=is%3Aissue+is%3Aclosed)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/BadwaterBay/vaniquery.svg)](https://GitHub.com/BadwaterBay/vaniquery/pulls/)
 [![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/BadwaterBay/vaniquery.svg)](https://GitHub.com/BadwaterBay/vaniquery/pulls/)
+
+---
+
+## Installation and usage
+
+The app is currently in alpha stage. Please refer to [Initial Setup section in our contributing guidelines](https://github.com/BadwaterBay/vaniquery/blob/master/CONTRIBUTING.md#Initial-setup) to install it.
+
+Commands:
+
+- `vaniquery vanilla filename`: Convert jQuery selectors to vanilla JavaScript ones in a file
+- `vaniquery revert filename`: Revert the changes in a file if the cached file is present
+
+Options:
+
+- `--help`: Show help
+- `--version`: Show version number
+- `-c, --cache`: Save changes to a cached file so that changes can be reverted. (_Recommended practice_)
 
 ---
 
