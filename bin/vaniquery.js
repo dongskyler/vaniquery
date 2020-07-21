@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/**
+ * Main script of vaniquery
+ */
+
 const revert = require('../lib/revert');
 const vanilla = require('../lib/vanilla');
 
