@@ -30,7 +30,7 @@ Removing jQuery dependency means your web app can run faster and be loaded faste
 
 ![Node.js CI](https://github.com/BadwaterBay/vanillaize-jquery/workflows/Node.js%20CI/badge.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/badwaterbay/vanillaize-jquery/badge)](https://www.codefactor.io/repository/github/badwaterbay/vanillaize-jquery)
-[![DeepScan grade](https://deepscan.io/api/teams/9440/projects/11966/branches/179827/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9440&pid=11966&bid=179827)
+[![DeepScan grade](https://deepscan.io/api/teams/9440/projects/12990/branches/210391/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9440&pid=12990&bid=210391)
 
 [![GitHub issues](https://img.shields.io/github/issues/BadwaterBay/vanillaize-jquery.svg)](https://GitHub.com/BadwaterBay/vanillaize-jquery/issues/)
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/BadwaterBay/vanillaize-jquery.svg)](https://GitHub.com/BadwaterBay/vanillaize-jquery/issues?q=is%3Aissue+is%3Aclosed)
