@@ -12,9 +12,8 @@
   "main": "bin/vaniquery.js",
   "scripts": {
     "ci": "yarn --frozen-lockfile",
-    "format": "prettier './**/*.{js,json,html,css,scss,md}' --write",
+    "format": "prettier './**/*.{js,json,md}' --write",
     "lint": "eslint './**/*.js' --cache --fix",
-    "clean": "rimraf dist",
     "test": "echo 'No test specified yet' && exit 0",
     "refresh": "rm -rf ./node_modules/ && yarn ci"
   },
@@ -24,20 +23,20 @@
     }
   },
   "lint-staged": {
-    "./**/*.{js,html,css,scss,md}": "prettier --write",
+    "./**/*.{js,json,md}": "prettier --write",
     "./**/*.js": "eslint --cache --fix"
   },
-  "dependencies": {},
+  "dependencies": {
+    "yargs": "^15.4.1"
+  },
   "devDependencies": {
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-html": "^6.0.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "rimraf": "^3.0.2"
+    "prettier": "^2.0.5"
   }
 }
