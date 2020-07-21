@@ -4,10 +4,7 @@ module.exports = {
   globals: { Atomics: 'readonly', SharedArrayBuffer: 'readonly' },
   parserOptions: { ecmaVersion: 2020, sourceType: 'module' },
   rules: {
-    'new-cap': 1,
-    'no-invalid-this': 1,
-    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
     'prettier/prettier': 'error',
   },
-  plugins: ['prettier', 'html'],
+  plugins: ['prettier'],
 };
