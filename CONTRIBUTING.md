@@ -1,4 +1,4 @@
-# Contributing to Vanillaize jQuery
+# Contributing to Vaniquery
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
@@ -12,6 +12,7 @@
   - [Submitting pull requests](#Submitting-pull-requests)
 - [How do I get started?](#How-do-I-get-started?)
   - [Initial setup](#Initial-setup)
+  - [Useful commands during development](#Useful-commands-during-development)
   - [Workflow](#Workflow)
   - [Bring your fork up to date with the original repository](#Bring-your-fork-up-to-date-with-the-original-repository)
   - [Other useful commands](#Other-useful-commands)
@@ -87,6 +88,22 @@ Please follow these steps:
   npm install -g .
   ```
 - Run script `vaniquery --version` in your terminal. If you see a version number, that means the app has been installed correctly.
+
+--
+
+## Useful commands during development
+
+When you develop the program, 2 commands will be handy, for example:
+
+`vaniquery vanilla ./__tests__/testCases/getElementById.js`
+
+and
+
+`vaniquery revert ./__tests__/testCases/getElementById.js`
+
+The former will vanillaize the script `./__tests__/testCases/getElementById.js` and update it. Then you can open the file and check the results.
+
+The latter will revert the vanillaized script back to its original form.
 
 ---
 
