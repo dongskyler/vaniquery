@@ -1,12 +1,12 @@
 /**
- * Test function vanilla on case 'appendElement'
+ * Test function vanilla on case 'selectAllPseudoClass'
  */
 
 const { vanilla } = require('../../lib/vanilla');
 const loadFileToBuffer = require('../../lib/loadFileToBuffer');
 
 describe("Test command 'vanilla' on test challenges", () => {
-  const testName = 'appendElement';
+  const testName = 'selectAllPseudoClass';
 
   test(`Vanillaize '${testName}'`, async () => {
     // Input
