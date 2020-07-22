@@ -2,12 +2,17 @@
  * Main test script
  */
 
+const fs = require('fs');
 const { vanilla } = require('../lib/vanilla');
 const loadFileToBuffer = require('../lib/loadFileToBuffer');
 
-describe("Test command 'vanilla'", () => {
-  const testNames = ['documentReady', 'getElementById'];
+const testDir = './__tests__/finishedTestChallenges/';
+const testNames = [];
+fs.readdirSync(testDir).forEach((filename) => {
+  testNames.push(filename.substr(0, filename.indexOf('.test.js')));
+});
 
+describe("Test command 'vanilla'", () => {
   testNames.forEach((testName) => {
     test(`Vanillaize '${testName}'`, async () => {
       // Input
