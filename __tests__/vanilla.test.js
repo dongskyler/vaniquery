@@ -29,7 +29,7 @@ describe('Test vanilla', () => {
     const output = await vanilla(argv);
 
     // Answer key
-    const answerKeyFile = './__tests__/testCases/documentReady.expect.js';
+    const answerKeyFile = './__tests__/testCases/documentReady.answerkey.js';
     const answerKey = await loadAnswerKey(answerKeyFile);
 
     // Expect
