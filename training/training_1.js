@@ -1,5 +1,5 @@
 const app = () => {
-  return document.addEventListener('DOMContentLoaded', function () {
+  return $(document).ready(function () {
     $('body').bootstrapMaterialDesign();
 
     (() => {
