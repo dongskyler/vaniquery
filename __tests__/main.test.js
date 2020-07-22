@@ -6,7 +6,7 @@ const { vanilla } = require('../lib/vanilla');
 const loadFileToBuffer = require('../lib/loadFileToBuffer');
 
 describe("Test command 'vanilla'", () => {
-  const testNames = ['documentReady'];
+  const testNames = ['documentReady', 'getElementById'];
 
   testNames.forEach((testName) => {
     test(`Vanillaize '${testName}'`, async () => {
