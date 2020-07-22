@@ -1,0 +1,3 @@
+$(".box");
+
+var divs = $('div');
