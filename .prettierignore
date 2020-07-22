@@ -1,4 +1,4 @@
 # The following files will be ignored by Eslint
 
 /node_modules
-/training
+**/testCases
