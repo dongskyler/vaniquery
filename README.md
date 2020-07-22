@@ -47,13 +47,15 @@ The app is currently in alpha stage. Please refer to [Initial Setup section in o
 Commands:
 
 - `vaniquery vanilla filename`: Convert jQuery selectors to vanilla JavaScript ones in a file
-- `vaniquery revert filename`: Revert the changes in a file if the cached file is present
+- `vaniquery revert filename`: Revert vanillaization in a file given its corresponding cache file
 
 Options:
 
 - `--help`: Show help
 - `--version`: Show version number
-- `-c, --cache`: Save changes to a cached file so that changes can be reverted. (_Recommended practice_)
+- `-c, --cache`: Cache the original file (_Default_)
+- `-C, --no-cache`: Do not cache the original file (_Not recommended_),
+- `-v, --verbose`: Show the code being worked on
 
 ---
 
