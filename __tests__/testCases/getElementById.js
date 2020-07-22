@@ -1,1 +1,3 @@
 var footer = $('#footer');
+
+$('#something');
