@@ -1,0 +1,1 @@
+var clonedElement = $('#about').clone();

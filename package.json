@@ -14,7 +14,7 @@
     "ci": "yarn --frozen-lockfile",
     "format": "prettier './**/*.{js,json,md}' --write",
     "lint": "eslint './**/*.js' --cache --fix",
-    "test": "jest",
+    "test": "jest ./__tests__/main.test.js",
     "refresh": "rm -rf ./node_modules/ && yarn ci"
   },
   "husky": {

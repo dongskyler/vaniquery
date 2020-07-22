@@ -1,5 +1,6 @@
 module.exports = {
   verbose: true,
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$',
+  testMatch: ['**/__tests__/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+  coveragePathIgnorePatterns: ['<rootDir>/__tests__/testChallenges/.*$'],
   testPathIgnorePatterns: ['(testCases).*$'],
 };
