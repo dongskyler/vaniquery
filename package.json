@@ -1,10 +1,27 @@
 {
   "name": "vaniquery",
   "version": "0.1.0",
-  "description": "Convert jQuery selectors to vanilla JavaScript",
-  "repository": "https://github.com/BadwaterBay/vaniquery.git",
-  "author": "Badwater Bay <info@badwaterbay.com>",
+  "author": "Badwater Bay <info@badwaterbay.com> (https://badwaterbay.com/)",
+  "contributors": [
+    "Skyler Dong <dongskyler@gmail.com> (https://skylerdong.com/)"
+  ],
   "license": "MIT",
+  "description": "Convert jQuery selectors to vanilla JavaScript",
+  "homepage": "https://github.com/BadwaterBay/vaniquery",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BadwaterBay/vaniquery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BadwaterBay/vaniquery/issues"
+  },
+  "keywords": [
+    "JavaScript",
+    "vanilla JavaScript",
+    "plain JavaScript",
+    "jQuery",
+    "converter"
+  ],
   "bin": {
     "vaniquery": "./build/bin/vaniquery.js"
   },
