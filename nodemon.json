@@ -1,0 +1,7 @@
+{
+  "exec": "NODE_ENV=development run-s build dev-r dev-i",
+  "watch": ["src/**/*"],
+  "ignore": [],
+  "ext": ".ts,.js",
+  "restartable": "rs"
+}

@@ -2,73 +2,70 @@
  * A collection of minor helper functions
  */
 
-const fs = require('fs');
+import fs from 'fs';
+import { IfcArgv } from './type';
 
 /**
  * Return a string of copyright notice
  */
-const copyrightNotice = (() => {
+const copyrightNotice = ((): string => {
   const thisYear = new Date().getFullYear();
   return `Copyright (c) ${thisYear} Badwater Bay (under MIT license)`;
 })();
 
-exports.copyrightNotice = copyrightNotice;
+export { copyrightNotice };
 
 /**
  * Return an array of filenames in a directory
- * @param {string} testDir
  */
-const listAllFilesInDir = (testDir) => {
-  const testCases = [];
-  fs.readdirSync(testDir).forEach((filename) => {
-    testCases.push(filename.substr(0, filename.indexOf('.test.js')));
-  });
+const listAllFilesInDir = (testDir: string): string[] => {
+  const testCases: string[] = [];
+  fs.readdirSync(testDir)
+    .filter((filename) => filename.indexOf('.test.js') >= 0)
+    .forEach((f) => {
+      testCases.push(f.substr(0, f.indexOf('.test.js')));
+    });
   return testCases;
 };
 
-exports.listAllFilesInDir = listAllFilesInDir;
+export { listAllFilesInDir };
 
 /**
  * Loading a file to stream buffer
- * @param {string} answerKeyFile
  */
-const loadFileToBuffer = async (answerKeyFile) => {
-  return new Promise((resolve) => {
+const loadFileToBuffer = async (answerKeyFile: string): Promise<string> =>
+  new Promise<string>((resolve) => {
     const stream = fs.createReadStream(answerKeyFile);
     stream.on('data', (buffer) => {
       resolve(buffer.toString());
     });
   });
-};
 
-exports.loadFileToBuffer = loadFileToBuffer;
+export { loadFileToBuffer };
 
 /**
  * Return filename from argument values
- * @param {Object} argv
+ * @param {IfcArgv} argv
  */
-const parseFilename = (argv) => argv._[1];
+const parseFilename = (argv: IfcArgv): string => argv._[1];
 
-exports.parseFilename = parseFilename;
+export { parseFilename };
 
 /**
  * Read a file and write to another file
- * @param {string} readFile
- * @param {string} writeFile
  */
-const readPipeWrite = (readFile, writeFile) => {
+const readPipeWrite = (readFile: string, writeFile: string): void => {
   const readStream = fs.createReadStream(readFile);
   const writeStream = fs.createWriteStream(writeFile);
   readStream.pipe(writeStream);
 };
 
-exports.readPipeWrite = readPipeWrite;
+export { readPipeWrite };
 
 /**
  * Save cache file
- * @param {Object} argv
  */
-const saveCacheFile = (argv) => {
+const saveCacheFile = (argv: IfcArgv): boolean => {
   try {
     const file = parseFilename(argv);
     const cacheFile = `${file}.vaniquerycache`;
@@ -81,4 +78,4 @@ const saveCacheFile = (argv) => {
   }
 };
 
-exports.saveCacheFile = saveCacheFile;
+export { saveCacheFile };

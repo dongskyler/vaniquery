@@ -2,15 +2,17 @@
  * Test function vanilla on test case
  */
 
-const { loadFileToBuffer } = require('../../lib/helpers');
+const path = require('path');
+const { loadFileToBuffer } = require('../../build/lib/helpers');
 
 exports.testVanillaOnTestCase = (testCase) => {
-  const { vanilla } = require('../../lib/vanilla'); // eslint-disable-line global-require
+  const { vanilla } = require('../../build/lib/vanilla'); // eslint-disable-line global-require
 
   test(`Vanillaize '${testCase}'`, async () => {
     // Input
+    const testCaseFile = path.join(__dirname, '..', 'testCases', `${testCase}.js`);
     const argv = {
-      _: ['vanilla', `./__tests__/testCases/${testCase}.js`],
+      _: ['vanilla', testCaseFile],
       C: true,
       'no-cache': true,
       noCache: true,
@@ -21,7 +23,12 @@ exports.testVanillaOnTestCase = (testCase) => {
     const output = await vanilla(argv);
 
     // Answer key
-    const answerKeyFile = `./__tests__/testCases/${testCase}.answerkey.js`;
+    const answerKeyFile = path.join(
+      __dirname,
+      '..',
+      'testCases',
+      `${testCase}.answerkey.js`
+    );
     const answerKey = await loadFileToBuffer(answerKeyFile);
 
     // Expect

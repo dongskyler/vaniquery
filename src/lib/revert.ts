@@ -2,13 +2,14 @@
  * Revert changes of vanillaizing a file, if its cached file is present
  */
 
-const fs = require('fs');
-const { parseFilename, readPipeWrite } = require('./helpers');
+import fs from 'fs';
+import { parseFilename, readPipeWrite } from './helpers';
+import { IfcArgv } from './type';
 
 /**
- * @param {Object} argv
+ * @param {IfcArgv} argv
  */
-exports.revert = (argv) => {
+const revert = (argv: IfcArgv): boolean => {
   try {
     console.log('Reverting vanillaization...');
 
@@ -29,16 +30,14 @@ exports.revert = (argv) => {
       revertFile
         .then(() => {
           fs.unlinkSync(cacheFile);
+          console.log('Reverting vanillaization finished.');
           return true;
         })
         .catch((err) => {
-          console.error(
-            'Something went wrong during reverting vanillaization.'
-          );
+          console.error('Something went wrong during reverting vanillaization.');
           console.error(err);
           return false;
-        })
-        .finally(console.log('Reverting vanillaization finished.'));
+        });
     } else {
       console.log('No cache file found. Cannot revert vanillaization.');
       return false;
@@ -50,3 +49,5 @@ exports.revert = (argv) => {
   }
   return false;
 };
+
+export default revert;

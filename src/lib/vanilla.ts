@@ -2,15 +2,15 @@
  * Vanillaize a file
  */
 
-const fs = require('fs');
-const equivalentsLib = require('./equivalentsLib.js');
-const { parseFilename, saveCacheFile } = require('./helpers');
+import fs from 'fs';
+import equivalentsLib from './equivalentsLib';
+import { parseFilename, saveCacheFile } from './helpers';
+import { IfcArgv, IfcEquivalentsLibEntry } from './type';
 
 /**
  * Vanillaize a file
- * @param {Object} argv
  */
-exports.vanilla = (argv) => {
+const vanilla = (argv: IfcArgv): Promise<string | boolean> | boolean => {
   try {
     const file = parseFilename(argv);
     console.log(`Vanillaizing '${file}'...`);
@@ -25,12 +25,12 @@ exports.vanilla = (argv) => {
       }
     }
 
-    const result = new Promise((resolve, reject) => {
+    const result = new Promise<string | boolean>((resolve, reject) => {
       try {
         const stream = fs.createReadStream(file);
-        stream.on('data', (buffer) => {
-          let content = buffer;
-          equivalentsLib.forEach((eq) => {
+        stream.on('data', (buffer: string) => {
+          let content: string = buffer;
+          equivalentsLib.forEach((eq: IfcEquivalentsLibEntry) => {
             if ('verbose' in argv && argv.verbose === true) {
               console.log(`Vanillaizing ${eq.name}...`);
             }
@@ -54,13 +54,11 @@ exports.vanilla = (argv) => {
 
 /**
  * Write vanillaized result to file
- * @param {Object} argv
- * @param {string} result
  */
-exports.vanillaOut = (argv, result) => {
+const vanillaOut = (argv: IfcArgv, result: string): boolean => {
   try {
     const file = parseFilename(argv);
-    fs.writeFile(file, result, 'utf8', (err) => {
+    fs.writeFile(file, result, 'utf8', (err): boolean => {
       if (err) {
         console.error('Something went wrong when writing vanillaized file.');
         console.error(err);
@@ -76,3 +74,5 @@ exports.vanillaOut = (argv, result) => {
   }
   return false;
 };
+
+export { vanilla, vanillaOut };

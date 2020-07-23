@@ -5,20 +5,26 @@
   "repository": "https://github.com/BadwaterBay/vaniquery.git",
   "author": "Badwater Bay <info@badwaterbay.com>",
   "license": "MIT",
-  "private": true,
   "bin": {
-    "vaniquery": "./bin/vaniquery.js"
+    "vaniquery": "./build/bin/vaniquery.js"
   },
-  "main": "bin/vaniquery.js",
+  "main": "build/bin/vaniquery.js",
   "scripts": {
     "ci": "yarn --frozen-lockfile",
-    "format": "prettier './**/*.{js,json,md}' --write",
-    "lint": "eslint './**/*.js' --cache --fix",
+    "format": "prettier './**/*.{js,ts,json,md}' --write",
+    "lint": "eslint './**/*.{js,ts}' --cache --fix",
+    "clean": "rimraf build",
+    "transpile": "tsc",
+    "build": "run-s clean transpile",
+    "dev-i": "npm i -g",
+    "dev-r": "npm r -g vaniquery",
     "test": "jest ./__tests__/main.test.js",
+    "start": "run-s build dev-r dev-i",
+    "start:dev": "nodemon",
     "refresh": "rm -rf ./node_modules/ && yarn ci"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.12.0"
   },
   "husky": {
     "hooks": {
@@ -26,22 +32,43 @@
     }
   },
   "lint-staged": {
-    "./**/*.{js,json,md}": "prettier --write",
-    "./**/*.js": "eslint --cache --fix"
+    "./**/*.{js,ts,json,md}": "prettier --write",
+    "./**/*.{js,ts}": "eslint --cache --fix"
+  },
+  "jest": {
+    "verbose": true,
+    "testMatch": [
+      "**/__tests__/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/__tests__/pendingTestChallenges/.*$"
+    ],
+    "testPathIgnorePatterns": [
+      "(testCases).*$"
+    ]
   },
   "dependencies": {
     "yargs": "^15.4.1"
   },
   "devDependencies": {
+    "@types/node": "^14.0.24",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   }
 }
