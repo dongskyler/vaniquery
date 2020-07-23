@@ -4,11 +4,9 @@
  * Main script of vaniquery
  */
 
-const revert = require('../lib/revert');
+const { revert } = require('../lib/revert');
 const { vanilla, vanillaOut } = require('../lib/vanilla');
-
-const thisYear = new Date().getFullYear();
-const copyrightNotice = `Copyright (c) ${thisYear} Badwater Bay`;
+const { copyrightNotice } = require('../lib/helpers');
 
 require('yargs') // eslint-disable-line
   .usage('Usage: vaniquery [OPTIONS] COMMAND')
