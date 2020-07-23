@@ -2,12 +2,11 @@
  * Library of equivalents of jQuery and vanilla JavaScript
  */
 
-module.exports = [
+const equivalentsLib = [
   {
     name: 'click',
     jquery: /(\$\(('|").*?('|")\))\.click\(\s*(function\s*\(.*\)\s*|\(.*\)\s*=>\s*)\{/g,
-    vanilla:
-      '$1' + '.addEventListener(' + '$2' + 'click' + '$3' + ', ' + '$4' + '{', // eslint-disable-line no-useless-concat
+    vanilla: '$1' + '.addEventListener(' + '$2' + 'click' + '$3' + ', ' + '$4' + '{', // eslint-disable-line no-useless-concat
   },
   {
     name: 'cloneElement',
@@ -27,8 +26,7 @@ module.exports = [
   {
     name: 'keyup',
     jquery: /(\$\(('|").*?('|")\))\.keyup\(\s*(function\s*\(.*\)\s*|\(.*\)\s*=>\s*)\{/g,
-    vanilla:
-      '$1' + '.addEventListener(' + '$2' + 'keyup' + '$3' + ', ' + '$4' + '{', // eslint-disable-line no-useless-concat
+    vanilla: '$1' + '.addEventListener(' + '$2' + 'keyup' + '$3' + ', ' + '$4' + '{', // eslint-disable-line no-useless-concat
   },
   {
     name: 'parent',
@@ -51,3 +49,5 @@ module.exports = [
     vanilla: 'document.getElementById(' + '$1' + '$2' + '$3' + ')', // eslint-disable-line no-useless-concat
   },
 ];
+
+export default equivalentsLib;

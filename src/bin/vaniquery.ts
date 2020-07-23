@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 
-/**
- * Main script of vaniquery
- */
-
-const { revert } = require('../lib/revert');
-const { vanilla, vanillaOut } = require('../lib/vanilla');
-const { copyrightNotice } = require('../lib/helpers');
+import revert from '../lib/revert';
+import { vanilla, vanillaOut } from '../lib/vanilla';
+import { copyrightNotice } from '../lib/helpers';
+import { IfcArgv } from '../lib/type';
 
 require('yargs') // eslint-disable-line
   .usage('Usage: vaniquery [OPTIONS] COMMAND')
@@ -28,16 +25,20 @@ require('yargs') // eslint-disable-line
   .command({
     command: 'vanilla',
     desc: 'Convert jQuery selectors to vanilla JavaScript ones in a file',
-    handler: async (argv) => {
-      const result = await vanilla(argv);
-      vanillaOut(argv, result);
+    handler: async (argv: IfcArgv) => {
+      const result: string | boolean = await vanilla(argv);
+      if (typeof result === 'string') {
+        vanillaOut(argv, result);
+      } else {
+        console.log('Something went wrong during vanillaization.');
+      }
     },
   })
   .nargs('vanilla', 1)
   .command({
     command: 'revert',
     desc: 'Revert vanillaization in a file given its corresponding cache file',
-    handler: (argv) => {
+    handler: (argv: IfcArgv) => {
       revert(argv);
     },
   })
