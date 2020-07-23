@@ -23,15 +23,14 @@
     "converter"
   ],
   "bin": {
-    "vaniquery": "./build/bin/vaniquery.js"
+    "vaniquery": "build/bin/vaniquery.js"
   },
   "main": "build/bin/vaniquery.js",
   "files": [
     "package.json",
     "README.md",
     "LICENSE",
-    "CONTRIBUTING.md",
-    "/build/**/*"
+    "build/**/*"
   ],
   "scripts": {
     "ci": "yarn --frozen-lockfile",
