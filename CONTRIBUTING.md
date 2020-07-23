@@ -170,7 +170,7 @@ If you are stuck, you are welcome to reach out and leave a comment.
 - `yarn build`: Create a production build inside `./build/`.
 - `yarn dev-i`: Install this command line interface (CLI) app on your machine via NPM for development and testing.
 - `yarn dev-r`: Remove this CLI app on your machine.
-- `yarn test`: Run preset tests on production build in `./build/`.
+- `yarn test`: Run preset tests on production build in `./build/`, meaning that you need to run `yarn build` or `yarn start` before `yarn test`.
 - `yarn start`: A combination of `yarn build`, `yarn dev-r` and `yarn dev-i`.
 - `yarn start:dev`: A combination of `yarn build`, `yarn dev-r` and `yarn dev-i`, but will watch changes in `./src` and repeat the combination.
 - If you run into problems with Node dependencies:
