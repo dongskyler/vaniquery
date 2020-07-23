@@ -24,7 +24,7 @@
     "refresh": "rm -rf ./node_modules/ && yarn ci"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.12.0"
   },
   "husky": {
     "hooks": {
@@ -34,6 +34,19 @@
   "lint-staged": {
     "./**/*.{js,ts,json,md}": "prettier --write",
     "./**/*.{js,ts}": "eslint --cache --fix"
+  },
+  "jest": {
+    "verbose": true,
+    "testMatch": [
+      "**/__tests__/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/__tests__/pendingTestChallenges/.*$"
+    ],
+    "testPathIgnorePatterns": [
+      "(testCases).*$"
+    ]
   },
   "dependencies": {
     "yargs": "^15.4.1"
