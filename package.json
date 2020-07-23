@@ -26,6 +26,13 @@
     "vaniquery": "./build/bin/vaniquery.js"
   },
   "main": "build/bin/vaniquery.js",
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "/build/**/*"
+  ],
   "scripts": {
     "ci": "yarn --frozen-lockfile",
     "format": "prettier './**/*.{js,ts,json,md}' --write",
