@@ -85,9 +85,11 @@ Please follow these steps:
   ```
 - Add this command-line app (vaniquery is a command-line app) to your machine for development and testing:
   ```
-  npm install -g .
+  yarn dev-i
   ```
-- Run script `vaniquery --version` in your terminal. If you see a version number, that means the app has been installed correctly.
+- Run command `vaniquery --version` in your terminal. If you see a version number, that means the app has been installed correctly.
+- Run command `yarn start:dev` to produce a production build (in `./build/`) and automatically recompiles when you make changes in `./src/` directory.
+- Run command `yarn test` to run preset tests on `./build/`.
 
 --
 
@@ -165,12 +167,15 @@ If you are stuck, you are welcome to reach out and leave a comment.
 - Lint your code using Eslint:
   - `yarn lint` will run Eslint to check the code quality. Please try to resolve these issues before committing any changes.
   - Tip: when you git-commit, `yarn lint` will be automatically triggered.
-- Create a production build:
-- Run tests:
-  - `yarn test` will run preset tests. However, this is a dummy for now, because we haven't written any tests yet. This is to show that we are aware of the importance of unit testing.
+- `yarn build`: Create a production build inside `./build/`.
+- `yarn dev-i`: Install this command line interface (CLI) app on your machine via NPM for development and testing.
+- `yarn dev-r`: Remove this CLI app on your machine.
+- `yarn test`: Run preset tests on production build in `./build/`.
+- `yarn start`: A combination of `yarn build`, `yarn dev-r` and `yarn dev-i`.
+- `yarn start:dev`: A combination of `yarn build`, `yarn dev-r` and `yarn dev-i`, but will watch changes in `./src` and repeat the combination.
 - If you run into problems with Node dependencies:
   - Try `yarn --frozen-lockfile` to see if it solves your problems.
-  - If not, run `yarn refresh` to remove all dependencies in the `node_modules` directory and do a clean install of dependencies.
+  - If not, run `yarn refresh` to remove all dependencies in the `node_modules` directory and do a clean install of all dependencies.
 
 ---
 
