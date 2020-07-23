@@ -1,6 +1,6 @@
 {
   "name": "vaniquery",
-  "version": "0.0.2-0",
+  "version": "0.0.2-1",
   "author": "Badwater Bay <info@badwaterbay.com> (https://badwaterbay.com/)",
   "contributors": [
     "Skyler Dong <dongskyler@gmail.com> (https://skylerdong.com/)"
@@ -23,15 +23,14 @@
     "converter"
   ],
   "bin": {
-    "vaniquery": "./build/bin/vaniquery.js"
+    "vaniquery": "build/bin/vaniquery.js"
   },
   "main": "build/bin/vaniquery.js",
   "files": [
     "package.json",
     "README.md",
     "LICENSE",
-    "CONTRIBUTING.md",
-    "/build/**/*"
+    "build/**/*"
   ],
   "scripts": {
     "ci": "yarn --frozen-lockfile",
