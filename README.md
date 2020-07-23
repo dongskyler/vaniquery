@@ -1,6 +1,6 @@
 # Vaniquery
 
-Repository: [https://github.com/BadwaterBay/vaniquery](https://github.com/BadwaterBay/vaniquery)
+Homepage: [https://github.com/BadwaterBay/vaniquery](https://github.com/BadwaterBay/vaniquery)
 
 ---
 
@@ -16,7 +16,7 @@ Repository: [https://github.com/BadwaterBay/vaniquery](https://github.com/Badwat
 
 ## Description
 
-This app helps you convert jQuery selectors to vanilla JavaScript.
+This command line interface (CLI) app helps you convert jQuery selectors to vanilla JavaScript.
 
 Once upon a time (since 2006), jQuery offers great convenience to JavaScript developers. However, 14 years later, vanilla JavaScript can do much more. More often than you think, you don't always need jQuery.
 
@@ -42,20 +42,45 @@ Removing jQuery dependency means your web app can run faster and be loaded faste
 
 ## Installation and usage
 
-The app is currently in alpha stage. Please refer to [Initial Setup section in our contributing guidelines](https://github.com/BadwaterBay/vaniquery/blob/master/CONTRIBUTING.md#Initial-setup) to install it.
+The CLI app is currently in prerelease stage.
 
-Commands:
+To install the CLI app on your machine, use commands:
 
-- `vaniquery vanilla filename`: Convert jQuery selectors to vanilla JavaScript ones in a file
-- `vaniquery revert filename`: Revert vanillaization in a file given its corresponding cache file
+```
+npm i -g vaniquery
+```
+
+or
+
+```
+yarn global add vaniquery
+```
+
+To install the app for development and testing, please refer to [our contributing guidelines](https://github.com/BadwaterBay/vaniquery/blob/master/CONTRIBUTING.md#Initial-setup).
+
+Available commands:
+
+- `vaniquery vanilla filename`: Convert jQuery to vanilla JavaScript in a file.
+- `vaniquery revert filename`: Revert vanillaization in a file given its corresponding cache file.
 
 Options:
 
-- `--help`: Show help
-- `--version`: Show version number
-- `-c, --cache`: Cache the original file (_Default_)
-- `-C, --no-cache`: Do not cache the original file (_Not recommended_),
-- `-v, --verbose`: Show the code being worked on
+- `--help`: Show help.
+- `--version`: Show version number.
+- `-c, --cache`: Cache the original file (_Default_).
+- `-C, --no-cache`: Do not cache the original file (_Not recommended_).
+- `-v, --verbose`: Show the code being worked on.
+
+---
+
+## Available conversions from jQuery to vanilla JavaScript
+
+- document ready
+- get element by ID
+- select all elements by tag or class names
+- select all elements by attribute
+- click
+- keyup
 
 ---
 
