@@ -9,45 +9,36 @@ import { IfcArgv } from './type';
 /**
  * @param {IfcArgv} argv
  */
-const revert = (argv: IfcArgv): boolean => {
-  try {
-    console.log('Reverting vanillaization...');
+const revert = (argv: IfcArgv): Promise<string> => {
+  return new Promise<string>((resolve, reject) => {
+    try {
+      console.log('Reverting vanillaization...');
 
-    const file = parseFilename(argv);
-    const cacheFile = `${file}.vaniquerycache`;
+      const file = parseFilename(argv);
+      const cacheFile = `${file}.vaniquerycache`;
 
-    if (fs.existsSync(cacheFile)) {
-      const revertFile = new Promise((resolve, reject) => {
-        try {
-          readPipeWrite(cacheFile, file);
-          resolve();
-        } catch (err) {
-          console.error(err);
-          reject();
-        }
-      });
-
-      revertFile
-        .then(() => {
-          fs.unlinkSync(cacheFile);
-          console.log('Reverting vanillaization finished.');
-          return true;
-        })
-        .catch((err) => {
-          console.error('Something went wrong during reverting vanillaization.');
-          console.error(err);
-          return false;
+      if (fs.existsSync(cacheFile)) {
+        readPipeWrite(cacheFile, file);
+        fs.unlink(cacheFile, (err) => {
+          if (err) {
+            console.error(err);
+            reject(err);
+          }
+          const msg = 'Reverting vanillaization finished.';
+          console.log(msg);
+          resolve(msg);
         });
-    } else {
-      console.log('No cache file found. Cannot revert vanillaization.');
-      return false;
+      } else {
+        const msg = 'No cache file found. Cannot revert vanillaization.';
+        console.log(msg);
+        reject(msg);
+      }
+    } catch (err) {
+      console.error('Something went wrong during reverting vanillaization.');
+      console.error(err);
+      reject(err);
     }
-  } catch (err) {
-    console.error('Something went wrong during reverting vanillaization.');
-    console.error(err);
-    return false;
-  }
-  return false;
+  });
 };
 
 export default revert;

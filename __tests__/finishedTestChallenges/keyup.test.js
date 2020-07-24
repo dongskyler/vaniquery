@@ -2,7 +2,7 @@
  * Test function vanilla on case 'keyup'
  */
 
-const { testVanillaOnTestCase } = require('../lib/testCommandOnTestCase');
+const { testVanillaOnTestCase } = require('../testLib/testCommandOnTestCase');
 
 const testCase = 'keyup';
 testVanillaOnTestCase(testCase);
