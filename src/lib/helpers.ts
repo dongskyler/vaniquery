@@ -6,17 +6,24 @@ import fs from 'fs';
 import { IfcArgv } from './type';
 
 /**
+ * Return filename from argument values
+ * @param argv
+ */
+const parseFilename = (argv: IfcArgv): string => argv._[1];
+export { parseFilename };
+
+/**
  * Return a string of copyright notice
  */
-const copyrightNotice = ((): string => {
+const copyrightNotice = (): string => {
   const thisYear = new Date().getFullYear();
   return `Copyright (c) ${thisYear} Badwater Bay (under MIT license)`;
-})();
-
+};
 export { copyrightNotice };
 
 /**
  * Return an array of filenames in a directory
+ * @param testDir
  */
 const listAllFilesInDir = (testDir: string): string[] => {
   const testCases: string[] = [];
@@ -27,11 +34,11 @@ const listAllFilesInDir = (testDir: string): string[] => {
     });
   return testCases;
 };
-
 export { listAllFilesInDir };
 
 /**
  * Loading a file to stream buffer
+ * @param answerKeyFile
  */
 const loadFileToBuffer = async (answerKeyFile: string): Promise<string> =>
   new Promise<string>((resolve) => {
@@ -40,42 +47,39 @@ const loadFileToBuffer = async (answerKeyFile: string): Promise<string> =>
       resolve(buffer.toString());
     });
   });
-
 export { loadFileToBuffer };
 
 /**
- * Return filename from argument values
- * @param {IfcArgv} argv
- */
-const parseFilename = (argv: IfcArgv): string => argv._[1];
-
-export { parseFilename };
-
-/**
  * Read a file and write to another file
+ * @param readFile
+ * @param writeFile
  */
 const readPipeWrite = (readFile: string, writeFile: string): void => {
   const readStream = fs.createReadStream(readFile);
   const writeStream = fs.createWriteStream(writeFile);
   readStream.pipe(writeStream);
 };
-
 export { readPipeWrite };
 
 /**
- * Save cache file
+ * Write content to file
+ * @param file
+ * @param content
  */
-const saveCacheFile = (argv: IfcArgv): boolean => {
-  try {
-    const file = parseFilename(argv);
-    const cacheFile = `${file}.vaniquerycache`;
-    readPipeWrite(file, cacheFile);
-    console.log('Cache file saved.');
-    return true;
-  } catch (err) {
-    console.error(err);
-    return false;
-  }
+const writeToFile = (file: string, content: string): Promise<string> => {
+  return new Promise<string>((resolve, reject) => {
+    try {
+      fs.writeFile(file, content, 'utf8', (err) => {
+        if (err) {
+          console.error('Something went wrong when writing to file.');
+          reject(err);
+        }
+        resolve('Successfully wrote to file.');
+      });
+    } catch (err) {
+      console.error('Something went wrong when writing to file.');
+      reject(err);
+    }
+  });
 };
-
-export { saveCacheFile };
+export { writeToFile };

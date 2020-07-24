@@ -6,7 +6,7 @@ const path = require('path');
 const { loadFileToBuffer } = require('../../build/lib/helpers');
 
 exports.testVanillaOnTestCase = (testCase) => {
-  const { vanilla } = require('../../build/lib/vanilla'); // eslint-disable-line global-require
+  const { vanillaize } = require('../../build/lib/vanilla'); // eslint-disable-line global-require
 
   test(`Vanillaize '${testCase}'`, async () => {
     // Input
@@ -20,7 +20,7 @@ exports.testVanillaOnTestCase = (testCase) => {
     };
 
     // Output
-    const output = await vanilla(argv);
+    const output = await vanillaize(argv);
 
     // Answer key
     const answerKeyFile = path.join(
