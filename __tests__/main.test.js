@@ -3,7 +3,7 @@
  */
 
 const path = require('path');
-const { testVanillaOnTestCase } = require('./lib/testCommandOnTestCase');
+const { testVanillaOnTestCase } = require('./testLib/testCommandOnTestCase');
 const { listAllFilesInDir } = require('../build/lib/helpers');
 
 const testDir = path.join(__dirname, 'finishedTestChallenges');

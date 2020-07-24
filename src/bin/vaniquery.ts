@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import revert from '../lib/revert';
-import { vanilla, vanillaOut } from '../lib/vanilla';
+import { vanilla } from '../lib/vanilla';
 import { copyrightNotice } from '../lib/helpers';
 import { IfcArgv } from '../lib/type';
 
@@ -25,23 +25,14 @@ require('yargs') // eslint-disable-line
   .command({
     command: 'vanilla',
     desc: 'Convert jQuery selectors to vanilla JavaScript ones in a file',
-    handler: async (argv: IfcArgv) => {
-      const result: string | boolean = await vanilla(argv);
-      if (typeof result === 'string') {
-        vanillaOut(argv, result);
-      } else {
-        console.log('Something went wrong during vanillaization.');
-      }
-    },
+    handler: async (argv: IfcArgv) => vanilla(argv),
   })
   .nargs('vanilla', 1)
   .command({
     command: 'revert',
     desc: 'Revert vanillaization in a file given its corresponding cache file',
-    handler: (argv: IfcArgv) => {
-      revert(argv);
-    },
+    handler: async (argv: IfcArgv) => revert(argv),
   })
   .nargs('revert', 1)
-  .epilog(copyrightNotice)
+  .epilog(copyrightNotice())
   .demandCommand(1).argv;
