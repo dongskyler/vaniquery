@@ -26,12 +26,17 @@ export { copyrightNotice };
  * @param dir
  */
 const listAllFilesInDir = (dir: string): string[] => {
+  if (!fs.existsSync(dir)) {
+    throw new ReferenceError('Directory does not exist.');
+  }
+
   const fileList: string[] = [];
   fs.readdirSync(dir)
     .filter((filename) => filename.indexOf('.test.js') >= 0)
     .forEach((f) => {
       fileList.push(f.substr(0, f.indexOf('.test.js')));
     });
+
   return fileList;
 };
 export { listAllFilesInDir };

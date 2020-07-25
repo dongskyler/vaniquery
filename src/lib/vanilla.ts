@@ -15,7 +15,7 @@ const saveCacheFile = (argv: IfcArgv): Promise<string> => {
   return new Promise<string>((resolve, reject) => {
     const file = parseFilename(argv);
     if (!fs.existsSync(file)) {
-      reject(new Error('File does not exist. Aborting.'));
+      reject(new ReferenceError('File does not exist. Aborting.'));
       return;
     }
 
@@ -27,7 +27,11 @@ const saveCacheFile = (argv: IfcArgv): Promise<string> => {
         })
         .catch((err) => {
           console.error(err);
-          reject(new Error('Cannot write cache file. Aborting.'));
+          reject(
+            new Error(
+              'Cannot write cache file. Check if you have write permission. Aborting.'
+            )
+          );
         });
     } else {
       resolve('User chose not to cache the original file. Proceed to vanillaization.');

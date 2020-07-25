@@ -25,13 +25,13 @@ require('yargs') // eslint-disable-line
   .command({
     command: 'vanilla',
     desc: 'Convert jQuery selectors to vanilla JavaScript ones in a file',
-    handler: async (argv: IfcArgv) => vanilla(argv),
+    handler: async (argv: IfcArgv) => vanilla(argv).catch((err) => console.error(err)),
   })
   .nargs('vanilla', 1)
   .command({
     command: 'revert',
     desc: 'Revert vanillaization in a file given its corresponding cache file',
-    handler: async (argv: IfcArgv) => revert(argv),
+    handler: async (argv: IfcArgv) => revert(argv).catch((err) => console.error(err)),
   })
   .nargs('revert', 1)
   .epilog(copyrightNotice())

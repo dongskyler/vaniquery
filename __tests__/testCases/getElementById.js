@@ -1,3 +1,3 @@
-var footer = document.getElementById('footer');
+var footer = $('#footer');
 
-document.getElementById('something');
+$('#something');
