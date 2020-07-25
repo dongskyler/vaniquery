@@ -34,6 +34,11 @@ const equivalentsLib = [
     vanilla: ').parentNode',
   },
   {
+    name: 'children',
+    jquery: /\)\.children\(\)/g,
+    vanilla: ').children',
+  },
+  {
     name: 'selectAll',
     jquery: /\$\(('|")(\.)?(\w+[\w_-]*)('|")\)/g,
     vanilla: 'document.querySelectorAll(' + '$1' + '$2' + '$3' + '$4' + ')', // eslint-disable-line no-useless-concat
