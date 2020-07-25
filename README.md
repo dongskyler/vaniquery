@@ -16,11 +16,9 @@ Homepage: [https://github.com/BadwaterBay/vaniquery](https://github.com/Badwater
 
 ## Description
 
-This command line interface (CLI) app helps you convert jQuery selectors to vanilla JavaScript.
+This command line interface (CLI) app helps you convert jQuery to vanilla JavaScript.
 
-Once upon a time (since 2006), jQuery offers great convenience to JavaScript developers. However, 14 years later, vanilla JavaScript can do much more. More often than you think, you don't always need jQuery.
-
-Removing jQuery dependency means your web app can run faster and be loaded faster. It also makes it easier when you migrate your existing web app to more modern libraries or frameworks, such as React/Redux.
+Once upon a time (since 2006), jQuery offers great convenience to JavaScript developers. However, 14 years later, vanilla JavaScript can do much more. More often than you think, you don't always need jQuery. Removing jQuery dependency means your web app can run faster and be loaded faster. It also makes it easier when you migrate your existing web app to more modern libraries or frameworks, such as React/Redux.
 
 ---
 
@@ -31,7 +29,7 @@ Removing jQuery dependency means your web app can run faster and be loaded faste
 
 ![Node.js CI](https://github.com/BadwaterBay/vaniquery/workflows/Node.js%20CI/badge.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/badwaterbay/vaniquery/badge)](https://www.codefactor.io/repository/github/badwaterbay/vaniquery)
-[![DeepScan grade](https://deepscan.io/api/teams/9440/projects/12990/branches/210391/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9440&pid=12990&bid=210391)
+[![DeepScan grade](https://deepscan.io/api/teams/9440/projects/13051/branches/212713/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9440&pid=13051&bid=212713)
 
 [![GitHub issues](https://img.shields.io/github/issues/BadwaterBay/vaniquery.svg)](https://GitHub.com/BadwaterBay/vaniquery/issues/)
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/BadwaterBay/vaniquery.svg)](https://GitHub.com/BadwaterBay/vaniquery/issues?q=is%3Aissue+is%3Aclosed)
@@ -75,12 +73,13 @@ Options:
 
 ## Available conversions from jQuery to vanilla JavaScript
 
+- children
+- click
 - document ready
 - get element by ID
+- keyup
 - select all elements by tag or class names
 - select all elements by attribute
-- click
-- keyup
 
 ---
 
