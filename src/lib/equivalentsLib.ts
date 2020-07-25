@@ -34,6 +34,11 @@ const equivalentsLib = [
     vanilla: "document.addEventListener('DOMContentLoaded', ",
   },
   {
+    name: 'documentReadyShorthand',
+    jquery: /\$\(function\s*\(\s*\)\s*\{/g,
+    vanilla: "document.addEventListener('DOMContentLoaded', () => {",
+  },
+  {
     name: 'documentReadyShortHand',
     jquery: /$^/,
     vanilla: '',
