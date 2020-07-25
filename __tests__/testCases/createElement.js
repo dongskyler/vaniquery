@@ -1,1 +1,3 @@
-var divs = $('div');
+var newDiv = $('div');
+
+var newList = $("li");

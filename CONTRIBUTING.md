@@ -6,11 +6,11 @@
 
 ## Table of contents
 
-- [How can I contribute?](#How-can-I-contribute?)
+- [How can I contribute](#How-can-I-contribute)
   - [Reporting bugs](#Reporting-bugs)
   - [Suggesting features and enhancements](#Suggesting-features-and-enhancements)
   - [Submitting pull requests](#Submitting-pull-requests)
-- [How do I get started?](#How-do-I-get-started?)
+- [How do I get started](#How-do-I-get-started)
   - [Initial setup](#Initial-setup)
   - [Useful commands during development](#Useful-commands-during-development)
   - [Workflow](#Workflow)
@@ -23,7 +23,7 @@
 
 ---
 
-## How can I contribute?
+## How can I contribute
 
 ### Reporting bugs
 
@@ -55,7 +55,7 @@ Please follow these steps:
 
 ---
 
-## How do I get started?
+## How do I get started
 
 ### Initial setup
 
@@ -91,7 +91,7 @@ Please follow these steps:
 - Run command `yarn start:dev` to produce a production build (in `./build/`) and automatically recompiles when you make changes in `./src/` directory.
 - Run command `yarn test` to run preset tests on `./build/`.
 
---
+---
 
 ## Useful commands during development
 
