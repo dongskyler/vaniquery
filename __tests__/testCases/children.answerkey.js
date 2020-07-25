@@ -1,3 +1,3 @@
 document.getElementById('my-parent').children;
 
-var child = ocument.getElementById('another-parent').children();
+var child = document.getElementById('another-parent').children;
