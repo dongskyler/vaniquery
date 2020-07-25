@@ -13,17 +13,24 @@ import { IfcArgv, IfcEquivalentsLibEntry } from './type';
  */
 const saveCacheFile = (argv: IfcArgv): Promise<string> => {
   return new Promise<string>((resolve, reject) => {
-    try {
-      if (!(!('cache' in argv) && 'noCache' in argv && argv.noCache === true)) {
-        const file = parseFilename(argv);
-        const cacheFile = `${file}.vaniquerycache`;
-        readPipeWrite(file, cacheFile);
-        resolve('Cache file successfully saved.');
-      } else {
-        resolve('User chose not to cache the original file. Proceed to vanillaization.');
-      }
-    } catch (err) {
-      reject(err);
+    const file = parseFilename(argv);
+    if (!fs.existsSync(file)) {
+      reject(new Error('File does not exist. Aborting.'));
+      return;
+    }
+
+    if (!(!('cache' in argv) && 'noCache' in argv && argv.noCache === true)) {
+      const cacheFile = `${file}.vaniquerycache`;
+      readPipeWrite(file, cacheFile)
+        .then(() => {
+          resolve('Cache file successfully saved.');
+        })
+        .catch((err) => {
+          console.error(err);
+          reject(new Error('Cannot write cache file. Aborting.'));
+        });
+    } else {
+      resolve('User chose not to cache the original file. Proceed to vanillaization.');
     }
   });
 };
@@ -37,7 +44,7 @@ const vanillaize = (argv: IfcArgv): Promise<string> => {
     try {
       const stream = fs.createReadStream(parseFilename(argv));
       stream.on('data', (buffer: string) => {
-        let content = buffer;
+        let content: string = buffer;
         equivalentsLib.forEach((eq: IfcEquivalentsLibEntry) => {
           if ('verbose' in argv && argv.verbose === true) {
             console.log(`Vanillaizing ${eq.name}...`);
@@ -64,10 +71,15 @@ const vanilla = async (argv: IfcArgv): Promise<string> => {
       .then((msgCache) => {
         console.log(msgCache);
         vanillaize(argv).then((vanillaizedCode) => {
-          writeToFile(file, vanillaizedCode).then((msgWrite) => {
-            console.log(msgWrite);
-            resolve(msgWrite);
-          });
+          writeToFile(file, vanillaizedCode)
+            .then((msgWrite) => {
+              console.log(msgWrite);
+              resolve(msgWrite);
+            })
+            .catch((err) => {
+              console.error(err);
+              reject(err);
+            });
         });
       })
       .catch((err) => {

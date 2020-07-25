@@ -23,16 +23,16 @@ export { copyrightNotice };
 
 /**
  * Return an array of filenames in a directory
- * @param testDir
+ * @param dir
  */
-const listAllFilesInDir = (testDir: string): string[] => {
-  const testCases: string[] = [];
-  fs.readdirSync(testDir)
+const listAllFilesInDir = (dir: string): string[] => {
+  const fileList: string[] = [];
+  fs.readdirSync(dir)
     .filter((filename) => filename.indexOf('.test.js') >= 0)
     .forEach((f) => {
-      testCases.push(f.substr(0, f.indexOf('.test.js')));
+      fileList.push(f.substr(0, f.indexOf('.test.js')));
     });
-  return testCases;
+  return fileList;
 };
 export { listAllFilesInDir };
 
@@ -41,11 +41,16 @@ export { listAllFilesInDir };
  * @param answerKeyFile
  */
 const loadFileToBuffer = async (answerKeyFile: string): Promise<string> =>
-  new Promise<string>((resolve) => {
+  new Promise<string>((resolve, reject) => {
     const stream = fs.createReadStream(answerKeyFile);
-    stream.on('data', (buffer) => {
-      resolve(buffer.toString());
-    });
+    stream
+      .on('data', (buffer) => {
+        resolve(buffer.toString());
+      })
+      .on('error', (err) => {
+        console.error('Error in loadFileToBuffer.');
+        reject(err);
+      });
   });
 export { loadFileToBuffer };
 
@@ -54,10 +59,22 @@ export { loadFileToBuffer };
  * @param readFile
  * @param writeFile
  */
-const readPipeWrite = (readFile: string, writeFile: string): void => {
-  const readStream = fs.createReadStream(readFile);
-  const writeStream = fs.createWriteStream(writeFile);
-  readStream.pipe(writeStream);
+const readPipeWrite = (readFile: string, writeFile: string): Promise<string> => {
+  return new Promise<string>((resolve, reject) => {
+    const readStream = fs.createReadStream(readFile).on('error', (err) => {
+      console.error('Error in createReadStream.');
+      reject(err);
+    });
+
+    const writeStream = fs.createWriteStream(writeFile).on('error', (err) => {
+      console.error('Error in createWriteStream.');
+      reject(err);
+    });
+
+    readStream.pipe(writeStream).on('finish', () => {
+      resolve('Successfully read a file and wrote a file.');
+    });
+  });
 };
 export { readPipeWrite };
 
@@ -68,18 +85,14 @@ export { readPipeWrite };
  */
 const writeToFile = (file: string, content: string): Promise<string> => {
   return new Promise<string>((resolve, reject) => {
-    try {
-      fs.writeFile(file, content, 'utf8', (err) => {
-        if (err) {
-          console.error('Something went wrong when writing to file.');
-          reject(err);
-        }
-        resolve('Successfully wrote to file.');
-      });
-    } catch (err) {
-      console.error('Something went wrong when writing to file.');
-      reject(err);
-    }
+    fs.writeFile(file, content, 'utf8', (err) => {
+      if (err) {
+        console.error('Something went wrong when writing to files (writeToFile).');
+        reject(err);
+        return;
+      }
+      resolve('Successfully wrote to a file.');
+    });
   });
 };
 export { writeToFile };

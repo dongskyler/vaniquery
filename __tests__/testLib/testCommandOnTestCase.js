@@ -9,29 +9,33 @@ exports.testVanillaOnTestCase = (testCase) => {
   const { vanillaize } = require('../../build/lib/vanilla'); // eslint-disable-line global-require
 
   test(`Vanillaize '${testCase}'`, async () => {
-    // Input
-    const testCaseFile = path.join(__dirname, '..', 'testCases', `${testCase}.js`);
-    const argv = {
-      _: ['vanilla', testCaseFile],
-      C: true,
-      'no-cache': true,
-      noCache: true,
-      $0: 'vaniquery',
-    };
+    try {
+      // Input
+      const testCaseFile = path.join(__dirname, '..', 'testCases', `${testCase}.js`);
+      const argv = {
+        _: ['vanilla', testCaseFile],
+        C: true,
+        'no-cache': true,
+        noCache: true,
+        $0: 'vaniquery',
+      };
 
-    // Output
-    const output = await vanillaize(argv);
+      // Output
+      const output = await vanillaize(argv);
 
-    // Answer key
-    const answerKeyFile = path.join(
-      __dirname,
-      '..',
-      'testCases',
-      `${testCase}.answerkey.js`
-    );
-    const answerKey = await loadFileToBuffer(answerKeyFile);
+      // Answer key
+      const answerKeyFile = path.join(
+        __dirname,
+        '..',
+        'testCases',
+        `${testCase}.answerkey.js`
+      );
+      const answerKey = await loadFileToBuffer(answerKeyFile);
 
-    // Expect
-    expect(output).toEqual(answerKey);
+      // Expect
+      expect(output).toEqual(answerKey);
+    } catch (err) {
+      console.error(err);
+    }
   });
 };
