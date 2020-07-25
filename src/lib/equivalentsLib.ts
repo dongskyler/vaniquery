@@ -30,7 +30,7 @@ const equivalentsLib = [
   },
   {
     name: 'parent',
-    jquery: /\)\.parent\(\)/g,
+    jquery: /$^/,
     vanilla: ').parentNode',
   },
   {
