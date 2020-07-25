@@ -1,1 +1,3 @@
-$('.my-class');
+$('.some-class');
+
+$(".my-class");
