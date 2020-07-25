@@ -31,7 +31,12 @@ const equivalentsLib = [
   {
     name: 'parent',
     jquery: /$^/,
-    vanilla: '',
+    vanilla: ').parentNode',
+  },
+  {
+    name: 'children',
+    jquery: /\)\.children\(\)/g,
+    vanilla: ').children',
   },
   {
     name: 'selectAll',

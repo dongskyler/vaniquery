@@ -6,7 +6,7 @@
     "Skyler Dong <dongskyler@gmail.com> (https://skylerdong.com/)"
   ],
   "license": "MIT",
-  "description": "Convert jQuery selectors to vanilla JavaScript",
+  "description": "A CLI tool that converts jQuery to vanilla JavaScript",
   "homepage": "https://github.com/BadwaterBay/vaniquery",
   "repository": {
     "type": "git",
