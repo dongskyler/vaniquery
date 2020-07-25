@@ -5,8 +5,18 @@
 const equivalentsLib = [
   {
     name: 'click',
-    jquery: /(\$\(('|").*?('|")\))\.click\(\s*(function\s*\(.*\)\s*|\(.*\)\s*=>\s*)\{/g,
-    vanilla: '$1' + '.addEventListener(' + '$2' + 'click' + '$3' + ', ' + '$4' + '{', // eslint-disable-line no-useless-concat
+    jquery: /(\$\(('|"|`).*?('|"|`)\))\.click\(/g,
+    vanilla: '$1' + '.addEventListener(' + '$2' + 'click' + '$2' + ', ', // eslint-disable-line no-useless-concat
+  },
+  {
+    name: 'keyup',
+    jquery: /(\$\(('|"|`).*?('|"|`)\))\.keyup\(/g,
+    vanilla: '$1' + '.addEventListener(' + '$2' + 'keyup' + '$2' + ', ', // eslint-disable-line no-useless-concat
+  },
+  {
+    name: 'mouseenter',
+    jquery: /(\$\(('|"|`).*?('|"|`)\))\.mouseenter\(/g,
+    vanilla: '$1' + '.addEventListener(' + '$2' + 'mouseenter' + '$2' + ', ', // eslint-disable-line no-useless-concat
   },
   {
     name: 'cloneElement',
@@ -24,14 +34,14 @@ const equivalentsLib = [
     vanilla: "document.addEventListener('DOMContentLoaded', ",
   },
   {
-    name: 'keyup',
-    jquery: /(\$\(('|").*?('|")\))\.keyup\(\s*(function\s*\(.*\)\s*|\(.*\)\s*=>\s*)\{/g,
-    vanilla: '$1' + '.addEventListener(' + '$2' + 'keyup' + '$3' + ', ' + '$4' + '{', // eslint-disable-line no-useless-concat
+    name: 'documentReadyShortHand',
+    jquery: /$^/,
+    vanilla: '',
   },
   {
     name: 'parent',
-    jquery: /$^/,
-    vanilla: ').parentNode',
+    jquery: /\.parent\(\)/g,
+    vanilla: '.parentNode',
   },
   {
     name: 'children',
@@ -39,19 +49,19 @@ const equivalentsLib = [
     vanilla: ').children',
   },
   {
-    name: 'selectAll',
-    jquery: /\$\(('|")(\.)?(\w+[\w_-]*)('|")\)/g,
-    vanilla: 'document.querySelectorAll(' + '$1' + '$2' + '$3' + '$4' + ')', // eslint-disable-line no-useless-concat
+    name: 'getElementById',
+    jquery: /\$\(('|"|`)#(.*)('|"|`)\)/g,
+    vanilla: 'document.getElementById(' + '$1' + '$2' + '$3' + ')', // eslint-disable-line no-useless-concat
   },
   {
     name: 'selectAllAttribute',
-    jquery: /\$\(('|")(\[\w+[\S]*\])('|")\)/g,
+    jquery: /\$\(('|"|`)(\[.+\])('|"|`)\)/g,
     vanilla: 'document.querySelectorAll(' + '$1' + '$2' + '$3' + ')', // eslint-disable-line no-useless-concat
   },
   {
-    name: 'getElementById',
-    jquery: /\$\(('|")#(\w+[\w_-]*?)('|")\)/g,
-    vanilla: 'document.getElementById(' + '$1' + '$2' + '$3' + ')', // eslint-disable-line no-useless-concat
+    name: 'selectAll',
+    jquery: /\$\(('|"|`)(\.)?(.+)('|"|`)\)/g,
+    vanilla: 'document.querySelectorAll(' + '$1' + '$2' + '$3' + '$4' + ')', // eslint-disable-line no-useless-concat
   },
 ];
 
