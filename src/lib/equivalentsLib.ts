@@ -79,6 +79,11 @@ const equivalentsLib = [
     vanilla: '.querySelectorAll(',
   },
   {
+    name: 'each',
+    jquery: /\.each\(/g,
+    vanilla: '.forEach(',
+  },
+  {
     name: 'getElementById',
     jquery: /\$\(('|"|`)#(.*)('|"|`)\)/g,
     vanilla: 'document.getElementById(' + '$1' + '$2' + '$3' + ')', // eslint-disable-line no-useless-concat
