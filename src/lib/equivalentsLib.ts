@@ -29,6 +29,11 @@ const equivalentsLib = [
     vanilla: 'this',
   },
   {
+    name: 'attr',
+    jquery: /\.attr\(/g,
+    vanilla: '.setAttribute(',
+  },
+  {
     name: 'cloneElement',
     jquery: /$^/,
     vanilla: '',
