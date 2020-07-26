@@ -73,13 +73,22 @@ Options:
 
 ## Available conversions from jQuery to vanilla JavaScript
 
+- add class
 - children
 - click
 - document ready
+- document ready (shorthand)
+- find
 - get element by ID
 - keyup
+- mouse enter
+- parent
+- remove class
 - select all elements by tag or class names
 - select all elements by attribute
+- text content
+- this
+- jQuery variables (\$variable)
 
 ---
 
