@@ -40,8 +40,6 @@ Once upon a time (since 2006), jQuery offers great convenience to JavaScript dev
 
 ## Installation and usage
 
-The CLI app is currently in prerelease stage.
-
 To install the CLI app on your machine, use commands:
 
 ```
