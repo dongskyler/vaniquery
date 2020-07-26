@@ -31,6 +31,11 @@ const equivalentsLib = [
     vanilla: '.classList.contains(',
   },
   {
+    name: 'toggleClass',
+    jquery: /\.toggleClass\(/g,
+    vanilla: '.classList.toggle(',
+  },
+  {
     name: 'this',
     jquery: /\$\(\s*this\s*\)/g,
     vanilla: 'this',
