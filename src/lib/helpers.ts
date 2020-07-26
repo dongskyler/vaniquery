@@ -1,5 +1,5 @@
 /**
- * A collection of minor helper functions
+ * A collection of helper functions
  */
 
 import fs from 'fs';
@@ -45,7 +45,7 @@ export { listAllFilesInDir };
  * Loading a file to stream buffer
  * @param answerKeyFile
  */
-const loadFileToBuffer = async (answerKeyFile: string): Promise<string> =>
+const loadFileToBuffer = (answerKeyFile: string): Promise<string> =>
   new Promise<string>((resolve, reject) => {
     const stream = fs.createReadStream(answerKeyFile);
     stream
