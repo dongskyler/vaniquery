@@ -18,7 +18,9 @@ Homepage: [https://github.com/BadwaterBay/vaniquery](https://github.com/Badwater
 
 This command line interface (CLI) app helps you convert jQuery to vanilla JavaScript.
 
-Once upon a time (since 2006), jQuery offers great convenience to JavaScript developers. However, 14 years later, vanilla JavaScript can do much more. More often than you think, you don't always need jQuery. Removing jQuery dependency means your web app can run faster and be loaded faster. It also makes it easier when you migrate your existing web app to more modern libraries or frameworks, such as React/Redux.
+Once upon a time, jQuery offers great convenience to JavaScript developers. However, now vanilla JavaScript has been improved and standardized across all modern browsers. More often than you think, you don't always need jQuery. Removing jQuery dependency means your web app can be loaded faster. It also makes it easier when you migrate your existing web app to more modern libraries or frameworks, such as React.
+
+This app helps you convert jQuery syntax to vanilla JavaScript ones.
 
 ---
 
@@ -78,9 +80,9 @@ Options:
 - `.closest()`
 - `$('[data-foo="val"]')` (select by attribute)
 - `$('div')`
-- `$(document).ready()`
+- `$(document).ready()...`
 - `.each()`
-- `$(function ()` (shorthand for `$(document).ready()`)
+- `$(function ()...` (shorthand for `$(document).ready()`)
 - `.find()`
 - `$('#id')` (select by ID)
 - `.keyup()`
