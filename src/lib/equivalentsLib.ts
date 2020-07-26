@@ -1,22 +1,19 @@
 /**
  * Library of equivalents of jQuery and vanilla JavaScript
+ *
+ * Note: the order of this array matters
  */
 
 const equivalentsLib = [
   {
-    name: 'click',
-    jquery: /(\$\(('|"|`).*?('|"|`)\))\.click\(/g,
-    vanilla: '$1' + '.addEventListener(' + '$2' + 'click' + '$2' + ', ', // eslint-disable-line no-useless-concat
+    name: 'documentReady',
+    jquery: /\$\(document\)\.ready\(/g,
+    vanilla: "document.addEventListener('DOMContentLoaded', ",
   },
   {
-    name: 'keyup',
-    jquery: /(\$\(('|"|`).*?('|"|`)\))\.keyup\(/g,
-    vanilla: '$1' + '.addEventListener(' + '$2' + 'keyup' + '$2' + ', ', // eslint-disable-line no-useless-concat
-  },
-  {
-    name: 'mouseenter',
-    jquery: /(\$\(('|"|`).*?('|"|`)\))\.mouseenter\(/g,
-    vanilla: '$1' + '.addEventListener(' + '$2' + 'mouseenter' + '$2' + ', ', // eslint-disable-line no-useless-concat
+    name: 'documentReadyShorthand',
+    jquery: /\$\(\s*function\s*\(\s*\)\s*\{/g,
+    vanilla: "document.addEventListener('DOMContentLoaded', () => {",
   },
   {
     name: 'addClass',
@@ -34,9 +31,24 @@ const equivalentsLib = [
     vanilla: 'this',
   },
   {
-    name: 'attr',
+    name: 'setAttribute',
     jquery: /\.attr\(/g,
     vanilla: '.setAttribute(',
+  },
+  {
+    name: 'removeAttribute',
+    jquery: /\.removeAttr\(/g,
+    vanilla: '.removeAttribute(',
+  },
+  {
+    name: 'valueGet',
+    jquery: /\.val\(\s*\)/g,
+    vanilla: '.value',
+  },
+  {
+    name: 'valueDefine',
+    jquery: /$^/,
+    vanilla: '',
   },
   {
     name: 'textContent',
@@ -44,24 +56,14 @@ const equivalentsLib = [
     vanilla: '.textContent(',
   },
   {
-    name: 'cloneElement',
-    jquery: /$^/,
-    vanilla: '',
+    name: 'checkedGet',
+    jquery: /\.prop\(\s*(?:'|")checked(?:'|")\s*\)/g,
+    vanilla: '.checked',
   },
   {
-    name: 'createElement',
-    jquery: /$^/,
-    vanilla: '',
-  },
-  {
-    name: 'documentReady',
-    jquery: /\$\(document\)\.ready\(/g,
-    vanilla: "document.addEventListener('DOMContentLoaded', ",
-  },
-  {
-    name: 'documentReadyShorthand',
-    jquery: /\$\(\s*function\s*\(\s*\)\s*\{/g,
-    vanilla: "document.addEventListener('DOMContentLoaded', () => {",
+    name: 'checkedDefine',
+    jquery: /\.prop\(\s*(?:'|")checked(?:'|")\s*,\s*(true|false)\s*\)/g,
+    vanilla: '.checked = ' + '$1', // eslint-disable-line no-useless-concat
   },
   {
     name: 'parent',
@@ -79,6 +81,11 @@ const equivalentsLib = [
     vanilla: '.querySelectorAll(',
   },
   {
+    name: 'closest',
+    jquery: /$^/,
+    vanilla: '',
+  },
+  {
     name: 'appendChild',
     jquery: /\.append\(\s*(\S+)\s*\)/g,
     vanilla: '.appendChild(' + 'document.createElement(' + '$1' + '))', // eslint-disable-line no-useless-concat
@@ -87,6 +94,31 @@ const equivalentsLib = [
     name: 'each',
     jquery: /\.each\(/g,
     vanilla: '.forEach(',
+  },
+  {
+    name: 'click',
+    jquery: /(\$\(('|"|`).*?('|"|`)\))\.click\(/g,
+    vanilla: '$1' + '.addEventListener(' + '$2' + 'click' + '$2' + ', ', // eslint-disable-line no-useless-concat
+  },
+  {
+    name: 'keyup',
+    jquery: /(\$\(('|"|`).*?('|"|`)\))\.keyup\(/g,
+    vanilla: '$1' + '.addEventListener(' + '$2' + 'keyup' + '$2' + ', ', // eslint-disable-line no-useless-concat
+  },
+  {
+    name: 'mouseenter',
+    jquery: /(\$\(('|"|`).*?('|"|`)\))\.mouseenter\(/g,
+    vanilla: '$1' + '.addEventListener(' + '$2' + 'mouseenter' + '$2' + ', ', // eslint-disable-line no-useless-concat
+  },
+  {
+    name: 'cloneElement',
+    jquery: /$^/,
+    vanilla: '',
+  },
+  {
+    name: 'createElement',
+    jquery: /$^/,
+    vanilla: '',
   },
   {
     name: 'getElementById',

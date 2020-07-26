@@ -13,12 +13,9 @@ exports.testVanillaOnTestCase = (testCase) => {
     // Check if test case file exists
     const testCaseFile = path.join(__dirname, '..', 'testCases', `${testCase}.js`);
     if (!fs.existsSync(testCaseFile)) {
-      console.error(
-        new ReferenceError(
-          `Test case file '${testCaseFile}' does not exist. Aborting testing.`
-        )
+      throw new ReferenceError(
+        `Test case file '${testCaseFile}' does not exist. Aborting.`
       );
-      return;
     }
 
     // Check if answer key file exists
@@ -29,10 +26,9 @@ exports.testVanillaOnTestCase = (testCase) => {
       `${testCase}.answerkey.js`
     );
     if (!fs.existsSync(answerKeyFile)) {
-      console.error(
-        new ReferenceError('Answer key file does not exist. Aborting testing.')
+      throw new ReferenceError(
+        `Answer key file ${answerKeyFile} does not exist. Aborting.`
       );
-      return;
     }
 
     // Input argument values

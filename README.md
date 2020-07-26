@@ -18,7 +18,9 @@ Homepage: [https://github.com/BadwaterBay/vaniquery](https://github.com/Badwater
 
 This command line interface (CLI) app helps you convert jQuery to vanilla JavaScript.
 
-Once upon a time (since 2006), jQuery offers great convenience to JavaScript developers. However, 14 years later, vanilla JavaScript can do much more. More often than you think, you don't always need jQuery. Removing jQuery dependency means your web app can run faster and be loaded faster. It also makes it easier when you migrate your existing web app to more modern libraries or frameworks, such as React/Redux.
+Once upon a time, jQuery offers great convenience to JavaScript developers. However, now vanilla JavaScript has been improved and standardized across all modern browsers. More often than you think, you don't always need jQuery. Removing jQuery dependency means your web app can be loaded faster. It also makes it easier when you migrate your existing web app to more modern libraries or frameworks, such as React.
+
+This app helps you convert jQuery syntax to vanilla JavaScript ones.
 
 ---
 
@@ -40,8 +42,6 @@ Once upon a time (since 2006), jQuery offers great convenience to JavaScript dev
 
 ## Installation and usage
 
-The CLI app is currently in prerelease stage.
-
 To install the CLI app on your machine, use commands:
 
 ```
@@ -54,12 +54,10 @@ or
 yarn global add vaniquery
 ```
 
-To install the app for development and testing, please refer to [our contributing guidelines](https://github.com/BadwaterBay/vaniquery/blob/master/CONTRIBUTING.md#Initial-setup).
-
 Available commands:
 
-- `vaniquery vanilla filename`: Convert jQuery to vanilla JavaScript in a file.
-- `vaniquery revert filename`: Revert vanillaization in a file given its corresponding cache file.
+- `vaniquery vanilla path/to/file`: Convert jQuery to vanilla JavaScript in a file.
+- `vaniquery revert path/to/file`: Revert vanillaization in a file given its corresponding cache file.
 
 Options:
 
@@ -73,22 +71,30 @@ Options:
 
 ## Available conversions from jQuery to vanilla JavaScript
 
-- add class
-- children
-- click
-- document ready
-- document ready (shorthand)
-- find
-- get element by ID
-- keyup
-- mouse enter
-- parent
-- remove class
-- select all elements by tag or class names
-- select all elements by attribute
-- text content
-- this
-- jQuery variables (\$variable)
+- `.addClass()`
+- `.append()`
+- `.attr()`
+- `.children()`
+- `$('.class')`
+- `.click()`
+- `.closest()`
+- `$('[data-foo="val"]')` (select by attribute)
+- `$('div')`
+- `$(document).ready()...`
+- `.each()`
+- `$(function ()...` (shorthand for `$(document).ready()`)
+- `.find()`
+- `$('#id')` (select by ID)
+- `.keyup()`
+- `.mouseenter()`
+- `.parent()`
+- `.prop('checked')`
+- `.removeAttr()`
+- `.removeClass()`
+- `.text()`
+- `$(this)`
+- `.val()` (get the value)
+- `$(variable)` (jQuery variable names that start with `$`)
 
 ---
 
