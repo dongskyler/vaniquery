@@ -64,11 +64,6 @@ const equivalentsLib = [
     vanilla: "document.addEventListener('DOMContentLoaded', () => {",
   },
   {
-    name: 'documentReadyShortHand',
-    jquery: /$^/,
-    vanilla: '',
-  },
-  {
     name: 'parent',
     jquery: /\.parent\(\)/g,
     vanilla: '.parentNode',
@@ -97,6 +92,11 @@ const equivalentsLib = [
     name: 'selectAll',
     jquery: /\$\(('|"|`)(\.)?(.+)('|"|`)\)/g,
     vanilla: 'document.querySelectorAll(' + '$1' + '$2' + '$3' + '$4' + ')', // eslint-disable-line no-useless-concat
+  },
+  {
+    name: 'variable',
+    jquery: /\$([\S^(]+)\s*=/g,
+    vanilla: '$1 =',
   },
 ];
 
