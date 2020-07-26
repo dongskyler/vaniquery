@@ -26,6 +26,11 @@ const equivalentsLib = [
     vanilla: '.classList.remove(',
   },
   {
+    name: 'hasClass',
+    jquery: /\.hasClass\(/g,
+    vanilla: '.classList.contains(',
+  },
+  {
     name: 'this',
     jquery: /\$\(\s*this\s*\)/g,
     vanilla: 'this',
