@@ -1,8 +1,8 @@
 /**
- * Test function vanilla on case 'value'
+ * Test function vanilla on case 'valueGet'
  */
 
 const { testVanillaOnTestCase } = require('../testLib/testCommandOnTestCase');
 
-const testCase = 'value';
+const testCase = 'valueGet';
 testVanillaOnTestCase(testCase);

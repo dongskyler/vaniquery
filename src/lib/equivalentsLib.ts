@@ -41,9 +41,14 @@ const equivalentsLib = [
     vanilla: '.removeAttribute(',
   },
   {
-    name: 'value',
-    jquery: /\.val\(\)/g,
+    name: 'valueGet',
+    jquery: /\.val\(\s*\)/g,
     vanilla: '.value',
+  },
+  {
+    name: 'valueDefine',
+    jquery: /$^/,
+    vanilla: '',
   },
   {
     name: 'textContent',
@@ -51,7 +56,7 @@ const equivalentsLib = [
     vanilla: '.textContent(',
   },
   {
-    name: 'checkedValue',
+    name: 'checkedGet',
     jquery: /\.prop\(\s*(?:'|")checked(?:'|")\s*\)/g,
     vanilla: '.checked',
   },
