@@ -14,7 +14,9 @@ exports.testVanillaOnTestCase = (testCase) => {
     const testCaseFile = path.join(__dirname, '..', 'testCases', `${testCase}.js`);
     if (!fs.existsSync(testCaseFile)) {
       console.error(
-        new ReferenceError('Test case file does not exist. Aborting testing.')
+        new ReferenceError(
+          `Test case file '${testCaseFile}' does not exist. Aborting testing.`
+        )
       );
       return;
     }

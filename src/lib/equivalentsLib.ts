@@ -70,13 +70,18 @@ const equivalentsLib = [
   },
   {
     name: 'children',
-    jquery: /\)\.children\(\)/g,
-    vanilla: ').children',
+    jquery: /\.children\(\s*\)/g,
+    vanilla: '.children',
   },
   {
     name: 'find',
     jquery: /\.find\(/g,
     vanilla: '.querySelectorAll(',
+  },
+  {
+    name: 'appendChild',
+    jquery: /\.append\(\s*(\S+)\s*\)/g,
+    vanilla: '.appendChild(' + 'document.createElement(' + '$1' + '))', // eslint-disable-line no-useless-concat
   },
   {
     name: 'each',
@@ -85,7 +90,7 @@ const equivalentsLib = [
   },
   {
     name: 'getElementById',
-    jquery: /\$\(('|"|`)#(.*)('|"|`)\)/g,
+    jquery: /\$\(('|"|`)#(\S*)('|"|`)\)/g,
     vanilla: 'document.getElementById(' + '$1' + '$2' + '$3' + ')', // eslint-disable-line no-useless-concat
   },
   {

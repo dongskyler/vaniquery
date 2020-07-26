@@ -5,7 +5,6 @@ $(document).ready(function () {
     $(`#form-${kind}`)
       .children()
       .each(
-        /** @this HTMLElement */
         function () {
           const $nameInput = $(this).find('.name-fitting');
           if (
