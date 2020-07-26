@@ -26,6 +26,16 @@ const equivalentsLib = [
     vanilla: '.classList.remove(',
   },
   {
+    name: 'hasClass',
+    jquery: /\.hasClass\(/g,
+    vanilla: '.classList.contains(',
+  },
+  {
+    name: 'toggleClass',
+    jquery: /\.toggleClass\(/g,
+    vanilla: '.classList.toggle(',
+  },
+  {
     name: 'this',
     jquery: /\$\(\s*this\s*\)/g,
     vanilla: 'this',
@@ -74,6 +84,11 @@ const equivalentsLib = [
     name: 'children',
     jquery: /\.children\(\s*\)/g,
     vanilla: '.children',
+  },
+  {
+    name: 'siblings',
+    jquery: /$^/,
+    vanilla: '',
   },
   {
     name: 'find',
@@ -137,7 +152,7 @@ const equivalentsLib = [
   },
   {
     name: 'variable',
-    jquery: /\$([\S^(]+)\s*=/g,
+    jquery: /\$([\S^(]+)\s*?=/g,
     vanilla: '$1 =',
   },
 ];

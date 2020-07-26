@@ -1,3 +1,3 @@
 const invalidForm = document.querySelectorAll('.myForm');
 
-let formSomething = document.getElementById("myForm");
+var formSomething = document.getElementById("myForm");
