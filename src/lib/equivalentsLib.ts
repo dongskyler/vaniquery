@@ -24,6 +24,11 @@ const equivalentsLib = [
     vanilla: '.classList.add(',
   },
   {
+    name: 'this',
+    jquery: /\$\(\s*this\s*\)/g,
+    vanilla: 'this',
+  },
+  {
     name: 'cloneElement',
     jquery: /$^/,
     vanilla: '',
