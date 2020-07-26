@@ -94,6 +94,7 @@ Options:
 - `.removeClass()`
 - `.text()`
 - `$(this)`
+- `.toggleClass()`
 - `.val()` (get the value)
 - `$(variable)` (jQuery variable names that start with `$`)
 
