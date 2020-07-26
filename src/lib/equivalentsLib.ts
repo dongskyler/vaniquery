@@ -39,6 +39,11 @@ const equivalentsLib = [
     vanilla: '.setAttribute(',
   },
   {
+    name: 'value',
+    jquery: /\.val\(\)/g,
+    vanilla: '.value',
+  },
+  {
     name: 'textContent',
     jquery: /\.text\(/g,
     vanilla: '.textContent(',
