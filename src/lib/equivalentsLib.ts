@@ -19,6 +19,11 @@ const equivalentsLib = [
     vanilla: '$1' + '.addEventListener(' + '$2' + 'mouseenter' + '$2' + ', ', // eslint-disable-line no-useless-concat
   },
   {
+    name: 'addClass',
+    jquery: /\.addClass\(/g,
+    vanilla: '.classList.add(',
+  },
+  {
     name: 'cloneElement',
     jquery: /$^/,
     vanilla: '',
@@ -35,7 +40,7 @@ const equivalentsLib = [
   },
   {
     name: 'documentReadyShorthand',
-    jquery: /\$\(function\s*\(\s*\)\s*\{/g,
+    jquery: /\$\(\s*function\s*\(\s*\)\s*\{/g,
     vanilla: "document.addEventListener('DOMContentLoaded', () => {",
   },
   {
