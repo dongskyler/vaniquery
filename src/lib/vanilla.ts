@@ -67,7 +67,7 @@ const vanillaize = (argv: IfcArgv): Promise<string> => {
  * Driver function of 'vanilla' command
  * @param argv
  */
-const vanilla = async (argv: IfcArgv): Promise<string> => {
+const vanilla = (argv: IfcArgv): Promise<string> => {
   return new Promise<string>((resolve, reject) => {
     const file = parseFilename(argv);
     console.log(`Vanillaizing '${file}'...`);
