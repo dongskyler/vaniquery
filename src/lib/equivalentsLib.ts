@@ -81,6 +81,11 @@ const equivalentsLib = [
     vanilla: '.children',
   },
   {
+    name: 'siblings',
+    jquery: /$^/,
+    vanilla: '',
+  },
+  {
     name: 'find',
     jquery: /\.find\(/g,
     vanilla: '.querySelectorAll(',
@@ -142,7 +147,7 @@ const equivalentsLib = [
   },
   {
     name: 'variable',
-    jquery: /\$([\S^(]+)\s*=/g,
+    jquery: /\$([\S^(]+)\s*?=/g,
     vanilla: '$1 =',
   },
 ];

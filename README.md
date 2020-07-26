@@ -84,6 +84,7 @@ Options:
 - `.each()`
 - `$(function ()...` (shorthand for `$(document).ready()`)
 - `.find()`
+- `.hasClass()`
 - `$('#id')` (select by ID)
 - `.keyup()`
 - `.mouseenter()`

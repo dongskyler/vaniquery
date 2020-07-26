@@ -1,3 +1,3 @@
 const $invalidForm = $('.myForm');
 
-let $formSomething = $("#myForm");
+var formSomething = $("#myForm");
