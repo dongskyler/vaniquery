@@ -31,9 +31,14 @@ const equivalentsLib = [
     vanilla: 'this',
   },
   {
-    name: 'attr',
+    name: 'setAttribute',
     jquery: /\.attr\(/g,
     vanilla: '.setAttribute(',
+  },
+  {
+    name: 'removeAttribute',
+    jquery: /\.removeAttr\(/g,
+    vanilla: '.removeAttribute(',
   },
   {
     name: 'value',
