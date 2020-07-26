@@ -39,6 +39,11 @@ const equivalentsLib = [
     vanilla: '.setAttribute(',
   },
   {
+    name: 'textContent',
+    jquery: /\.text\(/g,
+    vanilla: '.textContent(',
+  },
+  {
     name: 'cloneElement',
     jquery: /$^/,
     vanilla: '',
