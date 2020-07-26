@@ -76,6 +76,11 @@ const equivalentsLib = [
     vanilla: '.querySelectorAll(',
   },
   {
+    name: 'closest',
+    jquery: /$^/,
+    vanilla: '',
+  },
+  {
     name: 'appendChild',
     jquery: /\.append\(\s*(\S+)\s*\)/g,
     vanilla: '.appendChild(' + 'document.createElement(' + '$1' + '))', // eslint-disable-line no-useless-concat
