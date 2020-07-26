@@ -97,15 +97,17 @@ Please follow these steps:
 
 When you develop the program, 2 commands will be handy, for example:
 
-`vaniquery vanilla ./__tests__/testCases/getElementById.js`
+`vaniquery vanilla ./__tests__/testCases/testCaseFile.js`
 
 and
 
-`vaniquery revert ./__tests__/testCases/getElementById.js`
+`vaniquery revert ./__tests__/testCases/testCaseFile.js`
 
 The former will vanillaize the script `./__tests__/testCases/getElementById.js` and update it. Then you can open the file and check the results.
 
 The latter will revert the vanillaized script back to its original form.
+
+Please revert all test case scripts to their original state before submitting a pull request.
 
 ---
 

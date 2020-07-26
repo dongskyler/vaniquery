@@ -54,12 +54,10 @@ or
 yarn global add vaniquery
 ```
 
-To install the app for development and testing, please refer to [our contributing guidelines](https://github.com/BadwaterBay/vaniquery/blob/master/CONTRIBUTING.md#Initial-setup).
-
 Available commands:
 
-- `vaniquery vanilla filename`: Convert jQuery to vanilla JavaScript in a file.
-- `vaniquery revert filename`: Revert vanillaization in a file given its corresponding cache file.
+- `vaniquery vanilla path/to/file`: Convert jQuery to vanilla JavaScript in a file.
+- `vaniquery revert path/to/file`: Revert vanillaization in a file given its corresponding cache file.
 
 Options:
 
