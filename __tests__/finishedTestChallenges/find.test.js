@@ -1,8 +1,8 @@
 /**
- * Test function vanilla on case 'addClass'
+ * Test function vanilla on case 'find'
  */
 
 const { testVanillaOnTestCase } = require('../testLib/testCommandOnTestCase');
 
-const testCase = 'addClass';
+const testCase = 'find';
 testVanillaOnTestCase(testCase);
