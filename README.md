@@ -73,25 +73,30 @@ Options:
 
 ## Available conversions from jQuery to vanilla JavaScript
 
-- add class
-- append child
-- children
-- click
-- document ready
-- document ready (shorthand)
-- find
-- for each
-- get element by ID
-- keyup
-- mouse enter
-- parent
-- remove class
-- select all elements
-- select all elements by attribute
-- text content
-- this
-- value
-- variable names that start with '\$'
+- `.addClass()`
+- `.append()`
+- `.prop('checked')`
+- `.children()`
+- `.click()`
+- `.closest()`
+- `$(document).ready()`
+- `$(function ()` (shorthand for `$(document).ready()`)
+- `.find()`
+- `.each()`
+- `$('#id')`
+- `.keyup()`
+- `.mouseenter()`
+- `.parent()`
+- `.removeAttr()`
+- `.removeClass()`
+- `$('.class')`
+- `$('div')`
+- `$('[data-foo="val"]')`
+- `.attr()`
+- `.text()`
+- `$(this)`
+- `.val()` (get the value)
+- `$(variable)` (jQuery variable names that start with `$`)
 
 ---
 
