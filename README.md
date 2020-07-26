@@ -75,24 +75,24 @@ Options:
 
 - `.addClass()`
 - `.append()`
-- `.prop('checked')`
+- `.attr()`
 - `.children()`
+- `$('.class')`
 - `.click()`
 - `.closest()`
+- `$('[data-foo="val"]')` (select by attribute)
+- `$('div')`
 - `$(document).ready()`
+- `.each()`
 - `$(function ()` (shorthand for `$(document).ready()`)
 - `.find()`
-- `.each()`
-- `$('#id')`
+- `$('#id')` (select by ID)
 - `.keyup()`
 - `.mouseenter()`
 - `.parent()`
+- `.prop('checked')`
 - `.removeAttr()`
 - `.removeClass()`
-- `$('.class')`
-- `$('div')`
-- `$('[data-foo="val"]')`
-- `.attr()`
 - `.text()`
 - `$(this)`
 - `.val()` (get the value)
