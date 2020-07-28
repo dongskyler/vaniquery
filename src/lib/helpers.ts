@@ -10,7 +10,6 @@ import { IfcArgv } from './type';
  * @param argv
  */
 const parseFilename = (argv: IfcArgv): string => argv._[1];
-export { parseFilename };
 
 /**
  * Return a string of copyright notice
@@ -19,27 +18,23 @@ const copyrightNotice = (): string => {
   const thisYear = new Date().getFullYear();
   return `Copyright (c) ${thisYear} Badwater Bay (under MIT license)`;
 };
-export { copyrightNotice };
 
 /**
  * Return an array of filenames in a directory
  * @param dir
  */
-const listAllFilesInDir = (dir: string): string[] => {
+const listAllFilesInDir = (dir: string, ext: string): string[] => {
   if (!fs.existsSync(dir)) {
     throw new ReferenceError('Directory does not exist.');
   }
-
   const fileList: string[] = [];
   fs.readdirSync(dir)
-    .filter((filename) => filename.indexOf('.test.js') >= 0)
+    .filter((filename) => filename.indexOf(ext) >= 0)
     .forEach((f) => {
-      fileList.push(f.substr(0, f.indexOf('.test.js')));
+      fileList.push(f.substr(0, f.indexOf(ext)));
     });
-
   return fileList;
 };
-export { listAllFilesInDir };
 
 /**
  * Loading a file to stream buffer
@@ -57,7 +52,6 @@ const loadFileToBuffer = (answerKeyFile: string): Promise<string> =>
         reject(err);
       });
   });
-export { loadFileToBuffer };
 
 /**
  * Read a file and write to another file
@@ -70,18 +64,15 @@ const readPipeWrite = (readFile: string, writeFile: string): Promise<string> => 
       console.error('Error in createReadStream.');
       reject(err);
     });
-
     const writeStream = fs.createWriteStream(writeFile).on('error', (err) => {
       console.error('Error in createWriteStream.');
       reject(err);
     });
-
     readStream.pipe(writeStream).on('finish', () => {
       resolve('Successfully read a file and wrote a file.');
     });
   });
 };
-export { readPipeWrite };
 
 /**
  * Write content to file
@@ -100,4 +91,12 @@ const writeToFile = (file: string, content: string): Promise<string> => {
     });
   });
 };
-export { writeToFile };
+
+export {
+  parseFilename,
+  copyrightNotice,
+  listAllFilesInDir,
+  loadFileToBuffer,
+  readPipeWrite,
+  writeToFile,
+};
