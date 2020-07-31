@@ -4,6 +4,7 @@ Homepage: [https://github.com/BadwaterBay/vaniquery](https://github.com/Badwater
 
 [![npm version](https://badge.fury.io/js/vaniquery.svg)](https://badge.fury.io/js/vaniquery)
 ![Node.js CI](https://github.com/BadwaterBay/vaniquery/workflows/Node.js%20CI/badge.svg)
+[![codecov](https://codecov.io/gh/BadwaterBay/vaniquery/branch/master/graph/badge.svg)](https://codecov.io/gh/BadwaterBay/vaniquery)
 [![CodeFactor](https://www.codefactor.io/repository/github/badwaterbay/vaniquery/badge)](https://www.codefactor.io/repository/github/badwaterbay/vaniquery)
 [![DeepScan grade](https://deepscan.io/api/teams/9440/projects/13051/branches/212713/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9440&pid=13051&bid=212713)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
