@@ -32,7 +32,7 @@ We'd like to thank [all of our contributors](https://github.com/BadwaterBay/vani
 
 ## Description
 
-This command line interface (CLI) app helps you convert jQuery to vanilla JavaScript.
+This command line interface (CLI) tool helps you convert jQuery to vanilla JavaScript.
 
 Once upon a time, jQuery offers great convenience to JavaScript developers. However, now vanilla JavaScript has been improved and standardized across all modern browsers. More often than you think, you don't always need jQuery. Removing jQuery dependency means your web app can be loaded faster. It also makes it easier when you migrate your existing web app to more modern libraries or frameworks, such as React.
 
@@ -42,7 +42,7 @@ This app helps you convert jQuery syntax to vanilla JavaScript ones.
 
 ## Installation and usage
 
-To install the CLI app on your machine, use commands `npm i -g vaniquery` or `yarn global add vaniquery`.
+To install this tool on your machine, use commands `npm i -g vaniquery` or `yarn global add vaniquery`.
 
 Available commands:
 
