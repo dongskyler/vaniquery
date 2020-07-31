@@ -6,24 +6,31 @@
 
 ## Table of contents
 
-- [How can I contribute](#How-can-I-contribute)
-  - [Reporting bugs](#Reporting-bugs)
-  - [Suggesting features and enhancements](#Suggesting-features-and-enhancements)
-  - [Submitting pull requests](#Submitting-pull-requests)
-- [How do I get started](#How-do-I-get-started)
-  - [Initial setup](#Initial-setup)
-  - [Useful commands during development](#Useful-commands-during-development)
-  - [Workflow](#Workflow)
-  - [Bring your fork up to date with the original repository](#Bring-your-fork-up-to-date-with-the-original-repository)
-  - [Other useful commands](#Other-useful-commands)
-- [Style guides](#Style-guides)
-  - [Git commit messages](#Git-commit-messages)
-- [Other recommended practices](#Other-recommended-practices)
-  - [Sign commits with signature verifications](#Sign-commits-with-signature-verifications)
+- [Thank you, contributors](#thank-you-contributors)
+- [How can I contribute?](#how-can-I-contribute)
+  - [Reporting bugs](#reporting-bugs)
+  - [Suggesting features and enhancements](#suggesting-features-and-enhancements)
+  - [Submitting pull requests](#submitting-pull-requests)
+- [How do I get started?](#how-do-I-get-started)
+  - [Initial setup](#initial-setup)
+  - [Tips for development](#tips-for-development)
+  - [Workflow](#workflow)
+  - [Bring your fork up to date with the original repository](#bring-your-fork-up-to-date-with-the-original-repository)
+  - [Other useful commands](#other-useful-commands)
+- [Style guides](#style-guides)
+  - [Git commit messages](#git-commit-messages)
+- [Other recommended practices](#other-recommended-practices)
+  - [Sign commits with signature verifications](#sign-commits-with-signature-verifications)
 
 ---
 
-## How can I contribute
+## Thank you, contributors
+
+We'd like to thank [all of our contributors](https://github.com/BadwaterBay/vaniquery/graphs/contributors).
+
+---
+
+## How can I contribute?
 
 ### Reporting bugs
 
@@ -55,7 +62,7 @@ Please follow these steps:
 
 ---
 
-## How do I get started
+## How do I get started?
 
 ### Initial setup
 
@@ -93,7 +100,7 @@ Please follow these steps:
 
 ---
 
-## Useful commands during development
+## Tips for development
 
 When you develop the program, 2 commands will be handy, for example:
 

@@ -2,36 +2,11 @@
 
 Homepage: [https://github.com/BadwaterBay/vaniquery](https://github.com/BadwaterBay/vaniquery)
 
----
-
-## Table of contents
-
-- [Description](#Description)
-- [Badges](#Badges)
-- [Installation and usage](#Installation-and-usage)
-- [Contributing to this project](#Contributing-to-this-project)
-- [Contributors](#Contributors)
-
----
-
-## Description
-
-This command line interface (CLI) app helps you convert jQuery to vanilla JavaScript.
-
-Once upon a time, jQuery offers great convenience to JavaScript developers. However, now vanilla JavaScript has been improved and standardized across all modern browsers. More often than you think, you don't always need jQuery. Removing jQuery dependency means your web app can be loaded faster. It also makes it easier when you migrate your existing web app to more modern libraries or frameworks, such as React.
-
-This app helps you convert jQuery syntax to vanilla JavaScript ones.
-
----
-
-## Badges
-
-[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+[![npm version](https://badge.fury.io/js/vaniquery.svg)](https://badge.fury.io/js/vaniquery)
 ![Node.js CI](https://github.com/BadwaterBay/vaniquery/workflows/Node.js%20CI/badge.svg)
 [![CodeFactor](https://www.codefactor.io/repository/github/badwaterbay/vaniquery/badge)](https://www.codefactor.io/repository/github/badwaterbay/vaniquery)
 [![DeepScan grade](https://deepscan.io/api/teams/9440/projects/13051/branches/212713/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9440&pid=13051&bid=212713)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [![GitHub issues](https://img.shields.io/github/issues/BadwaterBay/vaniquery.svg)](https://GitHub.com/BadwaterBay/vaniquery/issues/)
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/BadwaterBay/vaniquery.svg)](https://GitHub.com/BadwaterBay/vaniquery/issues?q=is%3Aissue+is%3Aclosed)
@@ -40,19 +15,34 @@ This app helps you convert jQuery syntax to vanilla JavaScript ones.
 
 ---
 
+## Table of contents
+
+- [Thank you, contributors](#thank-you-contributors)
+- [Description](#description)
+- [Installation and usage](#installation-and-usage)
+- [Contributing to this project](#contributing-to-this-project)
+
+---
+
+## Thank you, contributors
+
+We'd like to thank [all of our contributors](https://github.com/BadwaterBay/vaniquery/graphs/contributors).
+
+---
+
+## Description
+
+This command line interface (CLI) tool helps you convert jQuery to vanilla JavaScript.
+
+Once upon a time, jQuery offers great convenience to JavaScript developers. However, now vanilla JavaScript has been improved and standardized across all modern browsers. More often than you think, you don't always need jQuery. Removing jQuery dependency means your web app can be loaded faster. It also makes it easier when you migrate your existing web app to more modern libraries or frameworks, such as React.
+
+This app helps you convert jQuery syntax to vanilla JavaScript ones.
+
+---
+
 ## Installation and usage
 
-To install the CLI app on your machine, use commands:
-
-```
-npm i -g vaniquery
-```
-
-or
-
-```
-yarn global add vaniquery
-```
+To install this tool on your machine, use commands `npm i -g vaniquery` or `yarn global add vaniquery`.
 
 Available commands:
 
@@ -96,16 +86,9 @@ Options:
 - `$(this)`
 - `.toggleClass()`
 - `.val()` (get the value)
-- `$(variable)` (jQuery variable names that start with `$`)
 
 ---
 
 ## Contributing to this project
 
 Please refer to our [Contributing Guidelines](https://github.com/BadwaterBay/vaniquery/blob/master/CONTRIBUTING.md).
-
----
-
-## Contributors
-
-[Click here to see a list of our contributors.](https://github.com/BadwaterBay/vaniquery/graphs/contributors)
