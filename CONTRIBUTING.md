@@ -73,7 +73,7 @@ Please follow these steps:
 - Add the original repository as a remote called `upstream`:
   - To add the original repository as `upstream`, run command:
     ```
-    git remote add upstream https://github.com/BadwaterBay/vanillaize-jquery.git
+    git remote add upstream https://github.com/BadwaterBay/vaniquery.git
     ```
   - To verify you have added the original repository, run command:
     ```
@@ -81,10 +81,10 @@ Please follow these steps:
     ```
   - You should see the following output (assuming you are using HTTPS):\
     ```
-    origin  https://github.com:<yourGitHubUsername>/vanillaize-jquery.git (fetch)
-    origin  https://github.com:<yourGitHubUsername>/vanillaize-jquery.git (push)
-    upstream  https://github.com/BadwaterBay/vanillaize-jquery.git (fetch)
-    upstream  https://github.com/BadwaterBay/vanillaize-jquery.git (push)
+    origin  https://github.com:<yourGitHubUsername>/vaniquery.git (fetch)
+    origin  https://github.com:<yourGitHubUsername>/vaniquery.git (push)
+    upstream  https://github.com/BadwaterBay/vaniquery.git (fetch)
+    upstream  https://github.com/BadwaterBay/vaniquery.git (push)
     ```
 - Install all dependencies with the following command. This could take a while.
   ```
@@ -122,7 +122,7 @@ Please revert all test case scripts to their original state before submitting a 
 
 Our workflow is:
 
-- Find an [issue](https://github.com/BadwaterBay/vanillaize-jquery/issues) you'd like to solve and claim it by leaving a comment.
+- Find an [issue](https://github.com/BadwaterBay/vaniquery/issues) you'd like to solve and claim it by leaving a comment.
 - Complete the [initial setup](#Initial-setup), if you haven't.
 - [Bring your fork up to date with the original repository](#Bring-your-fork-up-to-date-with-the-original-repository).
 - Modify the code to solve the issue and commit changes.
